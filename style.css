@@ -866,9 +866,9 @@ img {
 /* ===== Contact Section ===== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -1071,7 +1071,8 @@ img {
     }
 
     .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
     }
 
     .education-card {
