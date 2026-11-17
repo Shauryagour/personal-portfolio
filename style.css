@@ -1163,3 +1163,91 @@ img {
         display: none;
     }
 }
+
+/* ===== Copy Card & Hint ===== */
+.copy-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.copy-hint {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--accent-secondary);
+    margin-top: 6px;
+    opacity: 0.8;
+    transition: var(--transition-fast);
+}
+
+.copy-card:hover .copy-hint {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ===== Back to Top Button ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-hover);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent-gradient);
+    border-color: transparent;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+}
+
+/* ===== Toast Notification ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(50px);
+    background: rgba(22, 22, 30, 0.95);
+    border: 1px solid var(--accent-secondary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, visibility 0.3s;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}

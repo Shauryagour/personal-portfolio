@@ -95,3 +95,67 @@ const yearEl = document.querySelector('.footer-copyright');
 if (yearEl) {
     yearEl.innerHTML = yearEl.innerHTML.replace(/\d{4}/, new Date().getFullYear());
 }
+
+// ===== Back to Top Button =====
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ===== Toast Notification & Copy to Clipboard =====
+const toast = document.getElementById('toast');
+let toastTimeout;
+
+function showToast(message) {
+    if (!toast) return;
+    toast.innerHTML = `<i class="fas fa-check-circle" style="color: var(--accent-secondary);"></i> ${message}`;
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2500);
+}
+
+document.querySelectorAll('[data-copy]').forEach(el => {
+    el.addEventListener('click', () => {
+        const text = el.getAttribute('data-copy');
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`Copied ${text} to clipboard!`);
+            }).catch(() => {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    });
+});
+
+function fallbackCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        showToast(`Copied ${text} to clipboard!`);
+    } catch (err) {
+        showToast('Unable to copy');
+    }
+    document.body.removeChild(textarea);
+}

@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaurya Gour | Portfolio</title>
+    <title>Shaurya Gour | Software Developer &amp; CSE Portfolio</title>
+    <meta name="description" content="Portfolio of Shaurya Gour — Computer Science & Engineering undergraduate specializing in software development, cloud technologies, and cybersecurity.">
+    <meta name="keywords" content="Shaurya Gour, Portfolio, Computer Science, Software Engineer, Python, AWS, Docker, Cybersecurity, CipherLab">
+    <meta name="author" content="Shaurya Gour">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shauryagour.github.io/personal-portfolio/">
+    <meta property="og:title" content="Shaurya Gour | Software Developer &amp; CSE Portfolio">
+    <meta property="og:description" content="Computer Science & Engineering undergraduate skilled in Python, Java, C++, Cloud (AWS, Docker), and Cybersecurity. Explore projects and technical skills.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shauryagour.github.io/personal-portfolio/">
+    <meta property="twitter:title" content="Shaurya Gour | Software Developer &amp; CSE Portfolio">
+    <meta property="twitter:description" content="Computer Science & Engineering undergraduate skilled in Python, Java, C++, Cloud (AWS, Docker), and Cybersecurity.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -435,11 +456,6 @@
                 </p>
             </div>
             <div class="contact-grid">
-                <a href="mailto:shauryagour@example.com" class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>Drop me a line</p>
-                </a>
                 <a href="https://linkedin.com/in/shauryagour" target="_blank" rel="noopener noreferrer" class="contact-card">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn</h3>
@@ -450,14 +466,28 @@
                     <h3>GitHub</h3>
                     <p>github.com/Shauryagour</p>
                 </a>
-                <a href="tel:+918307354695" class="contact-card">
+                <div class="contact-card copy-card" data-copy="+918307354695" title="Click to copy phone number">
                     <i class="fas fa-phone"></i>
                     <h3>Phone</h3>
                     <p>+91 8307354695</p>
-                </a>
+                    <span class="copy-hint"><i class="fas fa-copy"></i> Click to copy</span>
+                </div>
+                <div class="contact-card location-card">
+                    <i class="fas fa-location-dot"></i>
+                    <h3>Location</h3>
+                    <p>Gurugram, Haryana, India</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
     <!-- Footer -->
     <footer class="footer">
